@@ -1,0 +1,40 @@
+{
+    "env": {
+        "development": {
+            "plugins": [
+                [
+                    "babel-plugin-styled-components", {
+                        "minify": false
+                    }
+                ]
+            ]
+
+        },
+        "production": {
+            "plugins": [
+                "react-remove-properties",
+                [
+                    "babel-plugin-styled-components", {
+                        "fileName": false,
+                        "displayName": false,
+                        "pure": true
+                    }
+                ]
+            ]
+        },
+        "test": {
+            "plugins":  [
+                [
+                    "babel-plugin-styled-components", {
+                        "minify": false
+                    }
+                ]
+            ]
+        }
+    },
+    "plugins": [
+        ["babel-plugin-root-import", {
+            "rootPathSuffix": "src"
+        }]
+    ]
+}
