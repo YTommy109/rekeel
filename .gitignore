@@ -72,6 +72,9 @@ typings/
 # production
 /build
 
+# report
+/report
+
 # misc
 .DS_Store
 .env.local
