@@ -2,6 +2,7 @@ import React from 'react'
 import {storiesOf} from '@storybook/react'
 import {action} from '@storybook/addon-actions'
 import TextWithLabel from './text_with_label'
+import PswdWithLabel from './pswd_with_label'
 
 storiesOf('l2_molecules', module)
   .add('フォーム部品', () =>
@@ -9,6 +10,13 @@ storiesOf('l2_molecules', module)
       <TextWithLabel 
         id              = 'test001'
         name            = 'test001'
+        label           = "テスト"
+        placeholder     = "プレースホルダー"
+        handleChange    = {action('Called handleChange')}
+      />
+      <PswdWithLabel 
+        id              = 'test002'
+        name            = 'test002'
         label           = "テスト"
         placeholder     = "プレースホルダー"
         handleChange    = {action('Called handleChange')}
