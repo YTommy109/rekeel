@@ -10,16 +10,25 @@ storiesOf('l2_molecules', module)
       <TextWithLabel 
         id              = 'test001'
         name            = 'test001'
-        label           = "テスト"
-        placeholder     = "プレースホルダー"
+        label           = "テキストのタイトル"
+        placeholder     = "テキストのプレースホルダー"
         handleChange    = {action('Called handleChange')}
       />
+      <br />
       <PswdWithLabel 
         id              = 'test002'
         name            = 'test002'
-        label           = "テスト"
-        placeholder     = "プレースホルダー"
+        label           = "パスワードのタイトル"
+        placeholder     = "パスワードのプレースホルダー"
         handleChange    = {action('Called handleChange')}
       />
     </div>
-  )
+  , {
+    info: {
+      inline: true,
+      header: false,
+      text: `
+          横幅は上位の DIV で設定して利用する。
+          `
+    }
+  })

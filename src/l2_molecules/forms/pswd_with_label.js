@@ -27,7 +27,7 @@ PswdWithLabelPure.propTypes = {
 
 const PswdWithLabel = styled(PswdWithLabelPure)`
     display:                grid;
-    grid-template-columns:  200px;
+    grid-template-columns:  1fr;
     grid-row-gap:           10px;
 `
 

@@ -2,14 +2,16 @@
 Start code for React project
 
 - プロジェクト開始時のスタートコード
+- デザイナーによるフルカスタマイズを想定 (React コンポーネントセットは使わない)
+
 - data-test を使ったテストのサンプル
 - enzyme を使ったテストのサンプル
 - TestCafe を使ったテストのサンプル
 - Ducks のサンプル
 - customize-cra によるカスタマイズのサンプル
 - アトミックデザインのサンプル
+- CSS Grid のサンプル
 - Storybook のサンプル
-- デザイナーによるフルカスタマイズを想定 (React コンポーネントセットは使わない)
 
 
 ## 採用技術
