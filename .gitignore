@@ -66,14 +66,12 @@ typings/
 /.pnp
 .pnp.js
 
-# testing
-/coverage
-
 # production
 /build
 
 # report
 /report
+/storybook-static
 
 # misc
 .DS_Store
