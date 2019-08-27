@@ -6,7 +6,7 @@ import PswdWithLabel from '~/l2_molecules/forms/pswd_with_label'
 import TwoButton from '~/l2_molecules/toolbar/two_button'
 
 export const SignInPure = ({className, ...props}) =>
-  <div className={className}>
+  <div className={className} name="sign_in_form">
     <form>
       <fieldset>
         <legend>サインイン</legend>
