@@ -25,5 +25,10 @@
       "semi":                 ["error", "never"],
       "object-curly-spacing": ["error"],
       "eol-last":             ["error"]
+    },
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
     }
 }
