@@ -20,10 +20,10 @@ Start code for React project
     <dt>ステート</dt>
     <dd>Redux</dd>
     <dt>非同期</dt>
-    <dd>Redux-thunk</dt>
+    <dd>Redux-thunk</dd>
     <dt>スタイル</dt>
-    <dd>styled components</dt>
-    <dd>Storybook</dt>
+    <dd>styled components</dd>
+    <dd>Storybook</dd>
     <dt>テスト (TDD)</dt>
     <dd>enzyme</dd>
     <dt>テスト (E2E)</dt>
