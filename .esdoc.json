@@ -18,7 +18,8 @@
           }
         }
       },
-      {"name": "esdoc-ecmascript-proposal-plugin", "option": {"all": true}}
+      {"name": "esdoc-ecmascript-proposal-plugin", "option": {"all": true}},
+      {"name": "esdoc-jsx-plugin", "option": {"enable": true}}
     ]
   }
   
