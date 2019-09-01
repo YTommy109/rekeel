@@ -1,17 +1,20 @@
 # ReKeel
-Start code for React project
+Start code for React project.
 
-- プロジェクト開始時のスタートコード
-- デザイナーによるフルカスタマイズを想定 (React コンポーネントセットは使わない)
+React を使ったプロジェクトの私用のスタートコードです。
 
-- data-test を使ったテストのサンプル
-- enzyme を使ったテストのサンプル
-- TestCafe を使ったテストのサンプル
-- Ducks のサンプル
-- customize-cra によるカスタマイズのサンプル
-- アトミックデザインのサンプル
-- CSS Grid のサンプル
-- Storybook のサンプル
+デザイナーによるフルカスタマイズを想定した (React コンポーネントセットは使わない) もので、ヘビープロジェクト向けになっており、アトミックデザイン、 CSS Grid、 storybook、 redux、 testcafe、plato などが含まれています。また、[customize-cra](https://github.com/arackaf/customize-cra) を使った [Babel](https://babeljs.io) の設定変更も行なっています。
+
+各種レポートを記録するようにしてあり、 [jest](https://jestjs.io/ja/) の結果を常時 report/report.html に出力するようにしてあるほか、カバレッジや testcafe のレポートを記録するスクリプトも含めています。
+
+```sh
+$ npm run coverage
+$ npm run cafe:report
+$ npm run plato
+```
+
+storybook は [Netlife](https://rekeel.netlify.com) に連携してあります。
+
 
 
 ## 採用技術
@@ -35,7 +38,11 @@ Start code for React project
 
 ## TODO
 
-- [ ] L3 Sample
-- [ ] Application Sample
-- [ ] TestCafe Sample
+- [x] L3 Sample
+- [x] L4 Sample
+- [x] L5 Sample
+- [x] Application Sample
+- [x] TestCafe Sample
 - [ ] React Hooks Sample
+- [ ] redux-thunk を使ったサンプル
+- [ ] data-test を使ったテストのサンプル
