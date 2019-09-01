@@ -9,8 +9,8 @@ React を使ったプロジェクトの私用のスタートコードです。
 
 ```sh
 $ npm run coverage     	# jest によるテストカバレッジ
-$ npm run cafe:report	 	# testcafe のテスト記録
-$ npm run plato					# plato によるソースコードの静的解析
+$ npm run cafe:report   # testcafe のテスト記録
+$ npm run plato         # plato によるソースコードの静的解析
 ```
 
 storybook は [Netlife](https://rekeel.netlify.com) に連携してあります。
