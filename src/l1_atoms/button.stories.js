@@ -3,7 +3,7 @@ import {storiesOf} from '@storybook/react'
 import {action} from '@storybook/addon-actions'
 import Button from './button'
   
-storiesOf('l1_atom', module)
+storiesOf('l1_atoms', module)
   .add('ボタン', () => 
     <div>
       <h3>Small サイズ</h3>
