@@ -11,6 +11,10 @@ export const SignInPagePure = ({className, ...props}) =>
     </CentralBoxPure>
   </div>
 
+SignInPagePure.propTypes = {
+  className:    PropTypes.string
+}
+
 const SignInPage = styled(SignInPagePure)`
     [name="sign_in_form"] {
         width: 360px;
