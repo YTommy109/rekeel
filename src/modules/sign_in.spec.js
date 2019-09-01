@@ -1,4 +1,4 @@
-import reducer, {updateText} from './sing_in'
+import reducer, {updateText} from './sign_in'
 
 const init = {
   payload: {
