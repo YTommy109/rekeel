@@ -8,9 +8,9 @@ React を使ったプロジェクトの私用のスタートコードです。
 各種レポートを記録するようにしてあり、 [jest](https://jestjs.io/ja/) の結果を常時 report/report.html に出力するようにしてあるほか、カバレッジや testcafe のレポートを記録するスクリプトも含めています。
 
 ```sh
-$ npm run coverage
-$ npm run cafe:report
-$ npm run plato
+$ npm run coverage     	# jest によるテストカバレッジ
+$ npm run cafe:report	 	# testcafe のテスト記録
+$ npm run plato					# plato によるソースコードの静的解析
 ```
 
 storybook は [Netlife](https://rekeel.netlify.com) に連携してあります。
