@@ -9,7 +9,7 @@ export const CentralBoxPure = ({className, children, ...props}) =>
 
 CentralBoxPure.propTypes = {
   className:    PropTypes.string,
-  children:     PropTypes.string
+  children:     PropTypes.node
 }
 
 const CentralBox = styled(CentralBoxPure)`

@@ -4,8 +4,9 @@ import {SignInPure} from './sign_in'
 import TwoButton from '~/l2_molecules/toolbar/two_button'
 
 describe('サインインフォームについて', () => {
+  const handler = () => {}
   const wrapper = shallow(
-    <SignInPure
+    <SignInPure handleChange = {handler}
     />
   )
 
@@ -25,8 +26,9 @@ describe('サインインフォームについて', () => {
     })
     it('パラメーターが設定されていること', () => {
       expect(target).toHaveProp({
-        name:   'account',
-        label:  expect.anything()
+        name:         'account',
+        label:        expect.anything(),
+        handleChange: handler
       })
     })
   })
@@ -39,8 +41,9 @@ describe('サインインフォームについて', () => {
     })
     it('パラメーターが設定されていること', () => {
       expect(target).toHaveProp({
-        name:   'password',
-        label:  expect.anything()
+        name:         'password',
+        label:        expect.anything(),
+        handleChange: handler
       })
     })
   })

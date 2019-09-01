@@ -11,14 +11,16 @@ export const SignInPure = ({className, ...props}) =>
       <fieldset>
         <legend>サインイン</legend>
         <TextWithLabel
-          id          = "account"
-          name        = "account"
-          label       = "アカウント"
+          id            = "account"
+          name          = "account"
+          label         = "アカウント"
+          handleChange  = {props.handleChange}
         />
         <PswdWithLabel
-          id          = "password"
-          name        = "password"
-          label       = "パスフレーズ"
+          id            = "password"
+          name          = "password"
+          label         = "パスフレーズ"
+          handleChange  = {props.handleChange}
         />
         <TwoButton
           config      = {[{
@@ -36,7 +38,8 @@ export const SignInPure = ({className, ...props}) =>
   </div>
 
 SignInPure.propTypes = {
-  className:    PropTypes.string
+  className:    PropTypes.string,
+  handleChange: PropTypes.func
 }
 
 const SignIn = styled(SignInPure)`
