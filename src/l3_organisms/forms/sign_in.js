@@ -46,6 +46,8 @@ const SignIn = styled(SignInPure)`
   fieldset {
     border:         solid medium silver;
     border-radius:  10px;
+    display:        grid;
+    grid-gap:       30px;
   }
 `
 
