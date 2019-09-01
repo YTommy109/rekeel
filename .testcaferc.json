@@ -1,0 +1,7 @@
+{
+    "browsers"              : "chrome",
+    "src"                   : "__cafe__/*.spec.js",
+    "screenshotPath"        : "__screenshot__",
+    "screenshotPathPattern" : "${DATE}_${TIME}/${FIXTURE}/${TEST_INDEX}_${TEST}/${FILE_INDEX}.png"
+  }
+  
