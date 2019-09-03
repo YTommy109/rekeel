@@ -3,7 +3,7 @@ Start code for React project.
 
 React を使ったプロジェクトの私用のスタートコードです。
 
-デザイナーによるフルカスタマイズを想定した (React コンポーネントセットは使わない) もので、ヘビープロジェクト向けになっており、アトミックデザイン、 CSS Grid、 storybook、 redux、 testcafe、plato などが含まれています。また、[customize-cra](https://github.com/arackaf/customize-cra) を使った [Babel](https://babeljs.io) の設定変更も行なっています。
+デザイナーによるフルカスタマイズを想定した (React コンポーネントセットは使わない) もので、ヘビープロジェクト向けになっており、アトミックデザイン、 CSS Grid、 storybook、 redux、 testcafe、plato、ESDoc などが含まれています。また、[customize-cra](https://github.com/arackaf/customize-cra) を使った [Babel](https://babeljs.io) の設定変更も行なっています。
 
 各種レポートを記録するようにしてあり、 [jest](https://jestjs.io/ja/) の結果を常時 report/report.html に出力するようにしてあるほか、カバレッジや testcafe のレポートを記録するスクリプトも含めています。
 
@@ -11,6 +11,7 @@ React を使ったプロジェクトの私用のスタートコードです。
 $ npm run coverage     	# jest によるテストカバレッジ
 $ npm run cafe:report   # testcafe のテスト記録
 $ npm run plato         # plato によるソースコードの静的解析
+$ npm run doc           # esdoc によるドキュメント生成
 ```
 
 storybook は [Netlife](https://rekeel.netlify.com) に連携してあります。
@@ -33,6 +34,8 @@ storybook は [Netlife](https://rekeel.netlify.com) に連携してあります�
     <dd>TestCafe</dd>
     <dt>静的解析</dt>
     <dd>plato</dd>
+    <dt>ドキュメント</dt>
+    <dd>esdoc</dd>
 </dl>
 
 
