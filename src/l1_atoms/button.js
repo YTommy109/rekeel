@@ -23,6 +23,7 @@ ButtonPure.propTypes = {
 }
 
 const color = {
+  normal:   'skyblue',
   primary:  '#38468C',
   danger:   'red'
 }
@@ -34,7 +35,7 @@ const size = {
 }
 const width = sz => sz ? size[sz].width : size['md'].width
 const height = sz => sz ? size[sz].height : size['md'].height
-const bgColor = st => st ? color[st] : color['primary']
+const bgColor = st => st ? color[st] : color['skyblue']
 
 const Button = styled(ButtonPure)`
   width:              ${props => width(props.size)};
