@@ -1,12 +1,13 @@
 import React from 'react'
 import {storiesOf} from '@storybook/react'
 import {action} from '@storybook/addon-actions'
+import Frame from '~/l1_atoms/frame'
 import TextWithLabel from './text_with_label'
 import PswdWithLabel from './pswd_with_label'
 
 storiesOf('l2_molecules', module)
   .add('フォーム部品', () =>
-    <div>
+    <Frame>
       <TextWithLabel 
         id              = 'test001'
         name            = 'test001'
@@ -22,7 +23,7 @@ storiesOf('l2_molecules', module)
         placeholder     = "パスワードのプレースホルダー"
         handleChange    = {action('Called handleChange')}
       />
-    </div>
+    </Frame>
   , {
     info: {
       inline: true,
