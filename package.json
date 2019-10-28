@@ -24,6 +24,7 @@
     "lint": "eslint src",
     "lint:fix": "npm run lint -- --fix ",
     "production": "serve -s build",
+    "stable": "npm ci; npm run build; npm run production",
     "cafe": "testcafe",
     "cafe:report": "testcafe chrome:headless -r spec:report/cafe.txt",
     "storybook": "start-storybook -p 9009 -s public",
