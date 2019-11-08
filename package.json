@@ -76,7 +76,7 @@
     "jest-html-reporter": "^2.7.0",
     "json-server": "^0.15.1",
     "plato": "^1.7.0",
-    "react-app-rewired": "^2.1.4",
+    "react-app-rewired": "^2.1.5",
     "serve": "^11.2.0",
     "testcafe": "^1.6.1",
     "testcafe-react-selectors": "^3.3.0"
