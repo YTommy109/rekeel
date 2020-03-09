@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import thunk from 'redux-thunk'
 import {createStore, applyMiddleware} from 'redux'
 import {Provider} from 'react-redux'
 import './index.css'
@@ -7,7 +8,7 @@ import App from './App'
 import reducer from './modules'
 import * as serviceWorker from './serviceWorker'
 
-const middlewares = []
+const middlewares = [thunk]
 
 // logger ミドルウェアを追加する
 if (process.env.NODE_ENV === 'development') {
