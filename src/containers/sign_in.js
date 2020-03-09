@@ -3,13 +3,15 @@ import {connect} from 'react-redux'
 import SignInPage from '~/l5_pages/sign_in'
 import {updateText} from '~/modules/sign_in'
 
-const mapStateToProps = state => ({signin: state.signin})
+const mapStateToProps = state => ({
+  ...state.signin
+})
 
-const mapDispatchToProps = dispatch => ({
-  action: () => bindActionCreators({
+const mapDispatchToProps = dispatch => (  // eslint-disable-line
+  bindActionCreators({
     updateText
   }, dispatch)
-})
+)
 
 export default connect(
   mapStateToProps,
