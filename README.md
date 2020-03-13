@@ -16,7 +16,13 @@ $ npm run doc           # esdoc によるドキュメント生成
 
 storybook は [Netlife](https://rekeel.netlify.com) に連携してあります。
 
+## 環境設定
 
+```sh
+REACT_APP_MAPBOX_TOKEN  = <Access Token>
+```
+
+地図コンポーネントで MAPBOX を使ってます。
 
 ## 採用技術
 

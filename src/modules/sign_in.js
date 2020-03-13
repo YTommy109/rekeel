@@ -1,3 +1,16 @@
+import {createSlice} from '@reduxjs/toolkit'
+
+export const signInModule = createSlice({
+  name: 'signin',
+  initialState: {
+    account:  '',
+    password: ''
+  },
+  reducers: {
+    updateText: (state, action) => ({...state, [action.name]: action.value})
+  }
+})
+
 // ActionType
 export const ACTION = {
   UPDATE_TEXT: 'signin/update/text'    // テキスト項目を更新
