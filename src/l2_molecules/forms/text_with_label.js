@@ -12,6 +12,7 @@ export const TextWithLabelPure = ({className, id, name, label, value, placeholde
       value         = {value}
       placeholder   = {placeholder}
       onChange      = {props.handleChange}
+      autoComplete  = {props.autoComplete}
     />
   </div>
 
@@ -22,7 +23,8 @@ TextWithLabelPure.propTypes = {
   label:        PropTypes.string.isRequired,
   value:        PropTypes.string,
   placeholder:  PropTypes.string,
-  handleChange: PropTypes.func
+  handleChange: PropTypes.func,
+  autoComplete: PropTypes.string
 }
 
 const TextWithLabel = styled(TextWithLabelPure)`

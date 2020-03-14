@@ -15,6 +15,7 @@ export const SignInPure = ({className, ...props}) =>
           name          = "account"
           label         = "アカウント"
           handleChange  = {props.handleChange}
+          autoComplete  = "username"
         />
         <PswdWithLabel
           id            = "password"

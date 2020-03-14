@@ -7,6 +7,7 @@ export const PswdWithLabelPure = ({className, id, name, label, value, placeholde
     <label htmlFor={id}>{label}</label>
     <input
       type          = "password"
+      autoComplete  = "current-password"
       id            = {id}
       name          = {name}
       value         = {value}
