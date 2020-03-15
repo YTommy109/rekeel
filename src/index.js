@@ -1,26 +1,22 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import thunk from 'redux-thunk'
-import {createStore, applyMiddleware} from 'redux'
+import {configureStore, getDefaultMiddleware} from "@reduxjs/toolkit"
 import {Provider} from 'react-redux'
 import './index.css'
 import App from './App'
 import reducer from './modules'
 import * as serviceWorker from './serviceWorker'
 
-const middlewares = [thunk]
+const middleware = [...getDefaultMiddleware()]
 
 // logger ミドルウェアを追加する
 if (process.env.NODE_ENV === 'development') {
   const {logger} = require('redux-logger')
 
-  middlewares.push(logger)
+  middleware.push(logger)
 }
 
-const store = createStore(
-  reducer,
-  applyMiddleware(...middlewares)
-)
+const store = configureStore({reducer, middleware})
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'))
 

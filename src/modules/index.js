@@ -1,4 +1,4 @@
-import {combineReducers} from 'redux'
-import signin from './sign_in'
+import {combineReducers} from '@reduxjs/toolkit'
+import signInModule from './sign_in'
 
-export default combineReducers({signin})
+export default combineReducers({signin: signInModule.reducer})
