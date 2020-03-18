@@ -12,17 +12,17 @@ describe('ボタンについて', () => {
       handleClick = {dummy}
     />
   )
-  const target = wrapper.find('button')
+  const target = wrapper.find('input[type="button"]')
+
+  it('ボタンが存在すること', () => {
+    expect(target).toHaveLength(1)
+  })
 
   it('パラメーターが渡っていること', () => {
     expect(target).toHaveProp({
-      id: 'dummy',
-      onClick: dummy
+      id:       'dummy',
+      value:    'ラベル',
+      onClick:  dummy
     })
   })
-
-  it('ラベルが渡っていること', () => {
-    expect(target).toHaveText('ラベル')
-  })
-
 })

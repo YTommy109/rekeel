@@ -3,14 +3,14 @@ import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
 export const ButtonPure = ({id, label, btnStyle, className, handleClick, disabled, ...props}) =>
-  <button
+  <input
+    type      = "button"
     className = {className}
     id        = {id}
     onClick   = {handleClick}
     disabled  = {disabled || false}
-  >
-    {label}
-  </button>
+    value     = {label}
+  />
 
 ButtonPure.propTypes = {
   id:           PropTypes.string.isRequired,
@@ -38,7 +38,7 @@ const height = sz => sz ? size[sz].height : size['md'].height
 const bgColor = st => st ? color[st] : color['skyblue']
 
 const Button = styled(ButtonPure)`
-  width:              ${props => width(props.size)};
+  min-width:          ${props => width(props.size)};
   height:             ${props => height(props.size)};
   color:              white;
   background-color:   ${props => bgColor(props.btnStyle)};
