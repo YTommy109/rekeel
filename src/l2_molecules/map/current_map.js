@@ -38,7 +38,7 @@ export const CurrentMapPure = ({className, center, points, ...props}) =>
         positions = {points}
       />
       {points.map((it, idx) =>
-        <Marker key={idx} position={it} icon={icon}/>
+        <Marker key={idx} position={it} icon={icon} data-testid="point" />
       )}
     </Map>
   </Fragment>

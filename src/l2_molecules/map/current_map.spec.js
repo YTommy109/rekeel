@@ -1,6 +1,6 @@
 import React from 'react'
 import {shallow} from 'enzyme'
-import {Map, TileLayer, Polyline, Marker} from 'react-leaflet'
+import {Map, TileLayer, Polyline} from 'react-leaflet'
 import {CurrentMapPure} from './current_map'
 
 describe('現在地マップについて', () => {
@@ -45,7 +45,7 @@ describe('現在地マップについて', () => {
   })
 
   it('Marker があること', () => {
-    const target = wrapper.find(Marker)
+    const target = wrapper.find('[data-testid="point"]')
 
     expect(target).toHaveLength(points.length)
   })
