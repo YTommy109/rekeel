@@ -31,7 +31,7 @@ class HttpBase {
   async _post(uri, data) {
     const option = {
       method:   'POST',
-      headers:  {'Content-Type': 'application/json; charset=utf-8'},
+      headers:  {'Content-Type': 'application/json; charset=utf-8', 'Accept-Language': 'ja'},
       body:     JSON.stringify(data)
     }
     const response = await fetch(uri, option)
