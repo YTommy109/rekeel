@@ -4,7 +4,6 @@ import {withKnobs, boolean} from '@storybook/addon-knobs'
 import {action} from '@storybook/addon-actions'
 import Button from './button'
 import Frame from './frame'
-import Slider from './slider'
 
 storiesOf('l1_atoms', module)
   .addDecorator(withKnobs)
@@ -37,14 +36,4 @@ storiesOf('l1_atoms', module)
       header: false
     }
   })
-  .add('スライダー', () => 
-    <Slider
-      image1 = '/ekiben1.jpeg'
-      image2 = '/ekiben2.jpeg'
-    />
-  , {
-    info: {
-      inline: true,
-      header: false
-    }
-  })
+
