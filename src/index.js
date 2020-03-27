@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import {configureStore, getDefaultMiddleware} from "@reduxjs/toolkit"
+import {configureStore, getDefaultMiddleware} from '@reduxjs/toolkit'
 import {Provider} from 'react-redux'
 import './index.css'
 import App from './App'
