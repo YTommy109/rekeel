@@ -1,37 +1,45 @@
 import React from 'react'
-import {shallow} from 'enzyme'
-import {TextWithLabelPure} from './text_with_label'
+import '@testing-library/jest-dom'
+import {render, fireEvent, screen} from '@testing-library/react'
+import TextWithLabel from './text_with_label'
 
-describe('タイトル付きテキスト入力について', () => {
-  const wrapper = shallow(
-    <TextWithLabelPure
-      id      = "dummy"
-      name    = "ネーム"
-      label   = "ラベル"
+describe('ラベル付きパスワード入力について', () => {
+  const handle = jest.fn()
+  beforeEach(() => {
+    render(<TextWithLabel
+      id            = "dummy"
+      name          = "ネーム"
+      label         = "ラベル"
+      value         = '値'
+      placeholder   = 'プレホル'
+      autoComplete  = 'hoge'
+      handleChange  = {handle}
     />
-  )
-
-  describe('label について', () => {
-    const target = wrapper.find('label')
-
-    it('パラメーターが渡っていること', () => {
-      expect(target).toHaveProp('htmlFor', 'dummy')
-    })
-
-    it('ラベルが渡っていること', () => {
-      expect(target).toHaveText('ラベル')
-    })
+    )
   })
 
-  describe('input について', () => {
-    const target = wrapper.find('input')
+  it('ラベルが存在すること', () => {
+    const target = screen.getByLabelText('ラベル')
+    expect(target).toBeInTheDocument()
+  })
 
-    it('パラメーターが渡っていること', () => {
-      expect(target).toHaveProp({
-        id:     'dummy',
-        type:   'text',
-        name:   'ネーム'
-      })
-    })
+  it('パラメータが渡されていること', () => {
+    const target = screen.getByLabelText('ラベル')
+    expect(target).toHaveAttribute('id', 'dummy')
+    expect(target).toHaveAttribute('name', 'ネーム')
+    expect(target).toHaveAttribute('placeholder', 'プレホル')
+    expect(target).toHaveValue('値')
+  })
+
+  it('パスワード入力であること', () => {
+    const target = screen.getByLabelText('ラベル')
+    expect(target).toHaveAttribute('type', 'text')
+    expect(target).toHaveAttribute('autoComplete', 'hoge')
+  })
+
+  it('ハンドラーが呼ばれること', () => {
+    const target = screen.getByLabelText('ラベル')
+    fireEvent.change(target, {target: {value: 'a'}})
+    expect(handle).toBeCalledTimes(1)
   })
 })

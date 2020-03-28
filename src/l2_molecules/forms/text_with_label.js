@@ -2,35 +2,31 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-export const TextWithLabelPure = ({className, id, name, label, value, placeholder, ...props}) =>
-  <div className={className}>
+const Div = styled.div`
+    display:                grid;
+    grid-template-columns:  1fr;
+    grid-row-gap:           10px;
+`
+
+const TextWithLabel = ({id, label, handleChange, ...props}) =>
+  <Div>
     <label htmlFor={id}>{label}</label>
     <input
       type          = "text"
       id            = {id}
-      name          = {name}
-      value         = {value}
-      placeholder   = {placeholder}
-      onChange      = {props.handleChange}
-      autoComplete  = {props.autoComplete}
+      onChange      = {handleChange}
+      {...props}
     />
-  </div>
+  </Div>
 
-TextWithLabelPure.propTypes = {
-  className:    PropTypes.string,
+TextWithLabel.propTypes = {
   id:           PropTypes.string.isRequired,
   name:         PropTypes.string.isRequired,
   label:        PropTypes.string.isRequired,
   value:        PropTypes.string,
   placeholder:  PropTypes.string,
-  handleChange: PropTypes.func,
-  autoComplete: PropTypes.string
+  autoComplete: PropTypes.string,
+  handleChange: PropTypes.func
 }
-
-const TextWithLabel = styled(TextWithLabelPure)`
-    display:                grid;
-    grid-template-columns:  1fr;
-    grid-row-gap:           10px;
-`
 
 export default TextWithLabel

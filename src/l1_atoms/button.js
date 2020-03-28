@@ -2,16 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
-const Base = ({className, ...props}) =>
-  <input
-    className = {className}
-    {...props}
-  />
-
-Base.propTypes = {
-  className:    PropTypes.string
-}
-
 const color = {
   normal:   'skyblue',
   primary:  '#38468C',
@@ -27,7 +17,7 @@ const width = sz => sz ? size[sz].width : size['md'].width
 const height = sz => sz ? size[sz].height : size['md'].height
 const bgColor = st => st ? color[st] : color['skyblue']
 
-const ButtonBase = styled(Base)`
+const ButtonBase = styled.input`
   min-width:          ${props => width(props.size)};
   height:             ${props => height(props.size)};
   color:              white;
