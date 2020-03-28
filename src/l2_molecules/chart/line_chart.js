@@ -1,34 +1,35 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
 } from 'recharts'
 
-export const LineChartPure = ({id, className, ...props}) =>
-  <LineChart
-    width   = {500}
-    height  = {300}
-    data    = {props.data}
-    margin  = {{top: 5, right: 30, left: 20, bottom: 5}}
-  >
-    <CartesianGrid strokeDasharray="3 3" />
-    <XAxis dataKey="name" />
-    <YAxis />
-    <Tooltip />
-    <Legend />
-    <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{r: 8}} />
-    <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
-  </LineChart>
+const LineChartBase = styled.div`
+  width:  500px;
+  height: 300px;
+  margin: 5px 30px 5px 20px;
+`
 
-LineChartPure.propTypes = {
-  className:    PropTypes.string,
-  id:           PropTypes.string,
+const LineChart2 = ({data, ...props}) =>
+  <LineChartBase {...props}>
+    <LineChart
+      width   = {500}
+      height  = {300}
+      data    = {data}
+    >
+      <CartesianGrid strokeDasharray="3 3" />
+      <XAxis dataKey="name" />
+      <YAxis />
+      <Tooltip />
+      <Legend />
+      <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{r: 8}} />
+      <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+    </LineChart>
+  </LineChartBase>
+
+LineChart2.propTypes = {
   data:         PropTypes.object.isRequired
 }
-
-const LineChart2 = styled(LineChartPure)`
-`
 
 export default LineChart2

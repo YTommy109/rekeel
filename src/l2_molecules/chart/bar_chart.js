@@ -3,26 +3,24 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import NVD3Chart from 'react-nvd3'
 
-export const BarChartPure = ({id, className, ...props}) =>
-  <div className={className}>
+const BarChartBase = styled.div`
+    display:          flex;
+    justify-content:  center;
+`
+
+const BarChart = ({datum, ...props}) =>
+  <BarChartBase {...props}>
     <NVD3Chart
-      id        = {id}
       type      = "discreteBarChart"
-      datum     = {props.datum}
+      datum     = {datum}
       x         = "label"
       y         = "value"
     />
-  </div>
+  </BarChartBase>
 
-BarChartPure.propTypes = {
-  className:    PropTypes.string,
-  id:           PropTypes.string,
+BarChart.propTypes = {
   datum:        PropTypes.object.isRequired
 }
 
-const BarChart = styled(BarChartPure)`
-    display:                flex;
-    justify-content:        center;
-`
 
 export default BarChart
