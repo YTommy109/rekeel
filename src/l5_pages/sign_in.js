@@ -4,8 +4,15 @@ import PropTypes from 'prop-types'
 import CentralBox from '~/l4_templates/central_box'
 import SignIn from '~/l3_organisms/forms/sign_in'
 
-export const SignInPagePure = ({className, ...props}) =>
-  <div className={className}>
+// FIXME: form を使うのは、コンポーネントの実装が漏れてるから NG
+const Div = styled.div`
+  form {
+    width: 480px;
+  }
+`
+
+const SignInPage = ({...props}) =>
+  <Div {...props}>
     <CentralBox>
       <SignIn
         handleChange  = {props.updateText}
@@ -13,19 +20,12 @@ export const SignInPagePure = ({className, ...props}) =>
         handleCancel  = {props.handleCancel}
       />
     </CentralBox>
-  </div>
+  </Div>
 
-SignInPagePure.propTypes = {
-  className:    PropTypes.string,
-  updateText:   PropTypes.func,
-  handleOK:     PropTypes.func,
-  handleCancel: PropTypes.func
+SignInPage.propTypes = {
+  updateText:   PropTypes.func.isRequired,
+  handleOK:     PropTypes.func.isRequired,
+  handleCancel: PropTypes.func.isRequired
 }
-
-const SignInPage = styled(SignInPagePure)`
-    [name="sign_in_form"] {
-        width: 360px;
-    }
-`
 
 export default SignInPage
