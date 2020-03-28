@@ -7,13 +7,19 @@ import SignIn from '~/l3_organisms/forms/sign_in'
 export const SignInPagePure = ({className, ...props}) =>
   <div className={className}>
     <CentralBox>
-      <SignIn handleChange = {props.updateText} />
+      <SignIn
+        handleChange  = {props.updateText}
+        handleOK      = {props.handleOK}
+        handleCancel  = {props.handleCancel}
+      />
     </CentralBox>
   </div>
 
 SignInPagePure.propTypes = {
   className:    PropTypes.string,
-  updateText:   PropTypes.func
+  updateText:   PropTypes.func,
+  handleOK:     PropTypes.func,
+  handleCancel: PropTypes.func
 }
 
 const SignInPage = styled(SignInPagePure)`
