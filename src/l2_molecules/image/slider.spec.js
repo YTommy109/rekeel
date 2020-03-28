@@ -14,12 +14,12 @@ describe('Slider コンポネントについて', () => {
   })
   describe('img タグについて', () => {
     it('image1 用の img があること', () => {
-      const target = screen.getByTestId('img1')
+      const target = screen.getByAltText('over')
       expect(target).toBeInTheDocument()
       expect(target).toHaveAttribute('src', 'img1')
     })
     it('image2 用の img があること', () => {
-      const target = screen.getByTestId('img2')
+      const target = screen.getByAltText('under')
       expect(target).toBeInTheDocument()
       expect(target).toHaveAttribute('src', 'img2')
     })
@@ -33,12 +33,12 @@ describe('Slider コンポネントについて', () => {
     })
 
     it('初期値が 50% であること', () => {
-      const target = screen.getByTestId('img1')
+      const target = screen.getByAltText('over')
       expect(target.parentNode).toHaveStyle({'width': '50%'})
     })
 
     it('スライダーで幅が変わること', () => {
-      const target = screen.getByTestId('img1')
+      const target = screen.getByAltText('over')
       const slider = screen.getByRole('slider')
       fireEvent.change(slider, {target: {value: 60}})
       expect(target.parentNode).toHaveStyle({'width': '60%'})

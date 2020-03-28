@@ -2,21 +2,7 @@ import React, {useState} from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
-export const SliderPure = ({className, ...props}) =>
-  <div className={className}>
-    <div className="on-image"><img src={props.image1} data-testid="img1" /></div>
-    <img src={props.image2}  data-testid="img2"/>
-    <input type="range" onChange={props.handleChange} role="slider" />
-  </div>
-
-SliderPure.propTypes = {
-  image1:       PropTypes.string,
-  image2:       PropTypes.string,
-  className:    PropTypes.string,
-  handleChange: PropTypes.func
-}
-
-const SliderBase = styled(SliderPure)`
+const Div = styled.div`
   position:       relative;
   display:        inline-block;
 
@@ -52,22 +38,21 @@ const SliderBase = styled(SliderPure)`
   }
 `
 
-const Slider = props => {
+const Slider = ({image1, image2, ...props}) => {
   const [width, setWidth] = useState('50%')
 
   return (
-    <SliderBase
-      image1        = {props.image1}
-      image2        = {props.image2}
-      handleChange  = {evt => setWidth(`${evt.target.value}%`)}
-      width         = {width}
-    />
+    <Div width={width} {...props}>
+      <div className="on-image"><img src={image1} alt="over" /></div>
+      <img src={image2} alt="under" />
+      <input type="range" onChange={e=>setWidth(`${e.target.value}%`)} role="slider" />
+    </Div>
   )
 }
 
 Slider.propTypes = {
-  image1:       PropTypes.string,
-  image2:       PropTypes.string
+  image1:       PropTypes.string.isRequired,
+  image2:       PropTypes.string.isRequired
 }
 
 export default Slider
