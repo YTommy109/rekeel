@@ -1,72 +1,91 @@
 import React from 'react'
-import {shallow} from 'enzyme'
-import {SignInPure} from './sign_in'
-import TwoButton from '~/l2_molecules/toolbar/two_button'
+import '@testing-library/jest-dom'
+import {render, fireEvent, screen} from '@testing-library/react'
+import SignIn from './sign_in'
 
-describe('サインインフォームについて', () => {
-  const handler = () => {}
-  const wrapper = shallow(
-    <SignInPure handleChange = {handler}
-    />
-  )
+describe('サインインについて', () => {
+  const handleChange  = jest.fn()
+  const handleOK      = jest.fn()
+  const handleCancel  = jest.fn()
+  beforeEach(() => {
+    handleChange.mockClear()
+    handleOK.mockClear()
+    handleCancel.mockClear()
+    render(
+      <SignIn
+        handleChange  = {handleChange}
+        handleOK      = {handleOK}
+        handleCancel  = {handleCancel}
+      />
+    )
+  })
 
   describe('フォーム名について', () => {
-    const target = wrapper.find('legend')
-
-    it('フォーム名があること', () => {
-      expect(target).toHaveLength(1)
+    it('存在すること', () => {
+      const target = screen.getByTestId('label')
+      expect(target).toBeInTheDocument()
     })
   })
 
   describe('アカウント入力欄について', () => {
-    const target = wrapper.find('#account')
-
-    it('アカウント入力欄があること', () => {
-      expect(target).toHaveLength(1)
+    it('存在すること', () => {
+      const target = screen.getByLabelText('アカウント')
+      expect(target).toBeInTheDocument()
     })
-    it('パラメーターが設定されていること', () => {
-      expect(target).toHaveProp({
-        name:         'account',
-        label:        expect.anything(),
-        handleChange: handler
-      })
+
+    it('パラメータが設定されてること', () => {
+      const target = screen.getByLabelText('アカウント')
+      expect(target).toHaveAttribute('id', 'account')
+      expect(target).toHaveAttribute('name', 'account')
+    })
+
+    it('ハンドラーが呼ばれること', () => {
+      const target = screen.getByLabelText('アカウント')
+      fireEvent.change(target, {target: {value: 'a'}})
+      expect(handleChange).toBeCalledTimes(1)
     })
   })
 
   describe('パスワード入力欄について', () => {
-    const target = wrapper.find('#password')
-
-    it('アカウント入力欄があること', () => {
-      expect(target).toHaveLength(1)
+    it('存在すること', () => {
+      const target = screen.getByLabelText('パスフレーズ')
+      expect(target).toBeInTheDocument()
     })
-    it('パラメーターが設定されていること', () => {
-      expect(target).toHaveProp({
-        name:         'password',
-        label:        expect.anything(),
-        handleChange: handler
-      })
+
+    it('パラメータが設定されてること', () => {
+      const target = screen.getByLabelText('パスフレーズ')
+      expect(target).toHaveAttribute('id', 'password')
+      expect(target).toHaveAttribute('name', 'password')
+    })
+
+    it('ハンドラーが呼ばれること', () => {
+      const target = screen.getByLabelText('パスフレーズ')
+      fireEvent.change(target, {target: {value: 'a'}})
+      expect(handleChange).toBeCalledTimes(1)
     })
   })
 
   describe('ボタンエリアについて', () => {
-
-    const target = wrapper.find(TwoButton)
-    it('ボタンエリアがあること', () => {
-      expect(target).toHaveLength(1)
+    it('存在すること', () => {
+      const target = screen.getByTestId('buttonbar')
+      expect(target).toBeInTheDocument()
     })
-    it('ボタンエリアにパラメーターが設定されていること', () => {
-      expect(target).toHaveProp({
-        config:   [{
-          id:     'cancel',
-          name:   'cancel',
-          label:  expect.anything()
-        }, {
-          id:     'signin',
-          name:   'signin',
-          label:  expect.anything()
-            
-        }],
-      })
+
+    it('サインインボタンがあること', () => {
+      const target = screen.getByDisplayValue('サインイン')
+      expect(target).toBeInTheDocument()
+    })
+
+    it('サインインハンドラーが呼ばれること', () => {
+      const target = screen.getByDisplayValue('サインイン')
+      fireEvent.click(target, {target: {value: ''}})
+      expect(handleOK).toBeCalledTimes(1)
+    })
+
+    it('キャンセルハンドラーが呼ばれること', () => {
+      const target = screen.getByDisplayValue('キャンセル')
+      fireEvent.click(target, {target: {value: ''}})
+      expect(handleCancel).toBeCalledTimes(1)
     })
   })
 })

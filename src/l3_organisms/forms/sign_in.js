@@ -9,7 +9,7 @@ export const SignInPure = ({className, ...props}) =>
   <div className={className} name="sign_in_form">
     <form>
       <fieldset>
-        <legend>サインイン</legend>
+        <legend data-testid="label">サインインしてください</legend>
         <TextWithLabel
           id            = "account"
           name          = "account"
@@ -24,14 +24,17 @@ export const SignInPure = ({className, ...props}) =>
           handleChange  = {props.handleChange}
         />
         <TwoButton
+          data-testid = 'buttonbar'
           config      = {[{
-            id:     'cancel',
-            name:   'cancel',
-            label:  'キャンセル'
+            id:           'cancel',
+            name:         'cancel',
+            label:        'キャンセル',
+            handleClick:  props.handleCancel
           }, {
-            id:     'signin',
-            name:   'signin',
-            label:  'サインイン'
+            id:           'signin',
+            name:         'signin',
+            label:        'サインイン',
+            handleClick:  props.handleOK
           }]}
         />
       </fieldset>
@@ -40,7 +43,9 @@ export const SignInPure = ({className, ...props}) =>
 
 SignInPure.propTypes = {
   className:    PropTypes.string,
-  handleChange: PropTypes.func
+  handleChange: PropTypes.func,
+  handleOK:     PropTypes.func,
+  handleCancel: PropTypes.func
 }
 
 const SignIn = styled(SignInPure)`
