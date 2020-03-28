@@ -6,7 +6,7 @@ export const SliderPure = ({className, ...props}) =>
   <div className={className}>
     <div className="on-image"><img src={props.image1} data-testid="img1" /></div>
     <img src={props.image2}  data-testid="img2"/>
-    <input type="range" onChange={props.handleChange} />
+    <input type="range" onChange={props.handleChange} role="slider" />
   </div>
 
 SliderPure.propTypes = {
@@ -46,8 +46,8 @@ const SliderBase = styled(SliderPure)`
 
   /* スマホサイズで画像が大きすぎる場合は調整 */
   @media only screen and (max-width: 30em) {
-    img{
-      width:300px;
+    img {
+      width:      300px;
     }
   }
 `
