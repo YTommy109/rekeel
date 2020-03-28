@@ -1,15 +1,16 @@
 import React from 'react'
-import {shallow} from 'enzyme'
-import {FramePure} from './frame'
+import '@testing-library/jest-dom'
+import {render, fireEvent, screen} from '@testing-library/react'
+import Frame from './frame'
 
-describe('ボタンについて', () => {
-  const wrapper = shallow(
-    <FramePure><span id='test001'>dummy</span></FramePure>
-  )
-  const target = wrapper.find('#test001')
+describe('フレームについて', () => {
+  const Child = () => <span>TEST</span>
+  beforeEach(() => {
+    render(<Frame><Child /></Frame>)
+  })
 
-  it('パラメーターが渡っていること', () => {
-    expect(target).toHaveLength(1)
-    expect(target).toHaveText('dummy')
+  it('子要素が存在すること', () => {
+    const target = screen.getByText('TEST')
+    expect(target).toBeInTheDocument()
   })
 })
