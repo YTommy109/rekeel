@@ -29,8 +29,6 @@ REACT_APP_MAPBOX_TOKEN  = <Access Token>
 <dl>
     <dt>ステート</dt>
     <dd>Redux</dd>
-    <dt>非同期</dt>
-    <dd>Redux-thunk</dd>
     <dt>スタイル</dt>
     <dd>styled components</dd>
     <dd>Storybook</dd>
@@ -43,15 +41,3 @@ REACT_APP_MAPBOX_TOKEN  = <Access Token>
     <dt>ドキュメント</dt>
     <dd>esdoc</dd>
 </dl>
-
-
-## TODO
-
-- [x] L3 Sample
-- [x] L4 Sample
-- [x] L5 Sample
-- [x] Application Sample
-- [x] TestCafe Sample
-- [ ] React Hooks Sample
-- [ ] redux-thunk を使ったサンプル
-- [ ] data-test を使ったテストのサンプル
