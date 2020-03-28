@@ -2,21 +2,18 @@ import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
-export const CentralBoxPure = ({className, children, ...props}) =>
-  <div className={className}>
-    <div>{children}</div>
-  </div>
-
-CentralBoxPure.propTypes = {
-  className:    PropTypes.string,
-  children:     PropTypes.node
-}
-
-const CentralBox = styled(CentralBoxPure)`
+const Div = styled.div`
     display:            grid;
     height:             100vh;
     justify-content:    center;
     align-items:        center;
 `
+
+const CentralBox = ({children, ...props}) =>
+  <Div {...props}>{children}</Div>
+
+CentralBox.propTypes = {
+  children:     PropTypes.node
+}
 
 export default CentralBox
