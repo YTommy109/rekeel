@@ -2,24 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
-export const ButtonPure = ({id, label, btnStyle, className, handleClick, disabled, ...props}) =>
+const Base = ({className, ...props}) =>
   <input
-    type      = "button"
     className = {className}
-    id        = {id}
-    onClick   = {handleClick}
-    disabled  = {disabled || false}
-    value     = {label}
+    {...props}
   />
 
-ButtonPure.propTypes = {
-  id:           PropTypes.string.isRequired,
-  label:        PropTypes.string.isRequired,
-  btnStyle:     PropTypes.string,
-  size:         PropTypes.string,
-  className:    PropTypes.string,
-  handleClick:  PropTypes.func,
-  disabled:     PropTypes.bool
+Base.propTypes = {
+  className:    PropTypes.string
 }
 
 const color = {
@@ -37,18 +27,38 @@ const width = sz => sz ? size[sz].width : size['md'].width
 const height = sz => sz ? size[sz].height : size['md'].height
 const bgColor = st => st ? color[st] : color['skyblue']
 
-const Button = styled(ButtonPure)`
+const ButtonBase = styled(Base)`
   min-width:          ${props => width(props.size)};
   height:             ${props => height(props.size)};
   color:              white;
   background-color:   ${props => bgColor(props.btnStyle)};
-  border-radius:      4px;
+  border-radius:      8px;
   :disabled {
     color:            #38468C;
     border:           1px solid #38468C;
-    border-radius:    4px;
+    border-radius:    8px;
     background-color: #FFFFFF;
   }
 `
+
+const Button = ({label, handleClick, disabled, ...props}) =>
+  <ButtonBase
+    type      = "button"
+    value     = {label}
+    onClick   = {handleClick}
+    {...props}
+  />
+
+Button.propTypes = {
+  id:           PropTypes.string.isRequired,
+  label:        PropTypes.string.isRequired,
+  btnStyle:     PropTypes.oneOf(['normal', 'primary', 'danger']),
+  size:         PropTypes.oneOf(['sm', 'md', 'lg']),
+  handleClick:  PropTypes.func,
+  disabled:     PropTypes.bool
+}
+Button.defaultProps = {
+  disabled: false
+}
 
 export default Button
