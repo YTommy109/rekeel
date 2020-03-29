@@ -6,7 +6,7 @@ import CurrentMap from './current_map'
 storiesOf('l2_molecules', module)
   .add('マップ部品', () =>
     <div>
-      <CurrentMap style={{width: '480px', height: '360px'}}
+      <CurrentMap style={{width: '800px', height: '600px'}}
         handleCurrent   = {action('現在地ボタンを押しました!')}
         mapClickHandle  = {action('マップをクリックしました!')}
         center = {[35.651687, 139.789177]}

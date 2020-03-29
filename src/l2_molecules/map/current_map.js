@@ -10,19 +10,27 @@ const icon = new L.Icon({
   iconSize: [38, 95]
 })
 
-export const CurrentMapPure = ({className, center, points, ...props}) =>
-  <Fragment>
+const Div = styled.div`
+  width:    100%;
+  height:   100%;
+  .leaflet-container {
+    height: 100%;
+  }
+`
+
+const CurrentMap = ({center, points, handleCurrent, handleClickOnMap, ...props}) =>
+  <Div {...props}>
     <Button
       id          = "current"
       label       = "現在地"
       size        = "sm"
       btnStyle    = "primary"
-      handleClick = {props.handleCurrent}
+      handleClick = {handleCurrent}
     />
-    <Map className={className}
+    <Map
       center      = {center}
       zoom        = {15}
-      onClick     = {props.mapClickHandle}
+      onClick     = {handleClickOnMap}
     >
       <TileLayer
         url         = "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}"
@@ -41,22 +49,13 @@ export const CurrentMapPure = ({className, center, points, ...props}) =>
         <Marker key={idx} position={it} icon={icon} data-testid="point" />
       )}
     </Map>
-  </Fragment>
+  </Div>
 
-CurrentMapPure.propTypes = {
-  className:      PropTypes.string,
-  center:         PropTypes.array,
-  points:         PropTypes.array,
-  handleCurrent:  PropTypes.func,
-  mapClickHandle: PropTypes.func
+CurrentMap.propTypes = {
+  center:           PropTypes.array.isRequired,
+  points:           PropTypes.array.isRequired,
+  handleCurrent:    PropTypes.func,
+  handleClickOnMap: PropTypes.func
 }
-
-const CurrentMap = styled(CurrentMapPure)`
-  width:  600px;
-  height: 400px;
-  .leaflet-container {
-    height: 400px;
-  }
-`
 
 export default CurrentMap
