@@ -13,7 +13,7 @@
     "react-nvd3": "^0.5.7",
     "react-pure-lifecycle": "^3.0.0",
     "react-redux": "^7.2.0",
-    "react-scripts": "3.4.1",
+    "react-scripts": "3.4.0",
     "react-transition-group": "^4.3.0",
     "recharts": "^1.8.5",
     "redux": "^4.0.5",
@@ -53,6 +53,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.0.0",
     "@storybook/addon-actions": "^5.3.17",
     "@storybook/addon-info": "^5.3.17",
     "@storybook/addon-knobs": "^5.3.17",
