@@ -18,7 +18,8 @@ storybook は [Netlife](https://rekeel.netlify.com) に連携してあります�
 
 ## 環境設定
 
-```sh
+```sh:
+# .env
 REACT_APP_MAPBOX_TOKEN  = <Access Token>
 ```
 
@@ -33,7 +34,7 @@ REACT_APP_MAPBOX_TOKEN  = <Access Token>
     <dd>styled components</dd>
     <dd>Storybook</dd>
     <dt>テスト (TDD)</dt>
-    <dd>enzyme</dd>
+    <dd><del>enzyme</del> Testing Library</dd>
     <dt>テスト (E2E)</dt>
     <dd>TestCafe</dd>
     <dt>静的解析</dt>
