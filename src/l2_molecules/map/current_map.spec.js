@@ -1,5 +1,4 @@
 import React from 'react'
-import '@testing-library/jest-dom'
 import {render, fireEvent, screen} from '@testing-library/react'
 import CurrentMap from './current_map'
 jest.mock('leaflet')
@@ -22,6 +21,7 @@ describe('現在地マップについて', () => {
     )
   })
 
+  // FIXME: React-leaflet が data-testid を消してしまう問題をどうするか?
   it.todo('Map があること')
   it.todo('TileLayer があること')
   it.todo('Polyline があること')
