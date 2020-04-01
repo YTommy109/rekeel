@@ -14,7 +14,7 @@ $ yarn plato        # plato によるソースコードの静的解析
 $ yarn doc          # esdoc によるドキュメント生成
 ```
 
-storybook は [Netlife](https://rekeel.netlify.com) に連携してあります。
+storybook は [Netlife](https://rekeel.netlify.app) に連携してあります。
 
 ## 環境設定
 
