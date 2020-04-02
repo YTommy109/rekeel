@@ -6,6 +6,7 @@ class HttpBase {
    * HTTP GET
    * @param {string} uri    Request URI
    * @return {object}       レスポンスデータ
+   * @throws {Error}        http status が 400 以上の場合
    * @private 
    */
   async _get(uri) {
@@ -26,6 +27,7 @@ class HttpBase {
    * @param {string} uri    Request URI
    * @param {object} data   送信データ (JSON 化可能なもの)
    * @return {object}       レスポンスデータ
+   * @throws {Error}        http status が 400 以上の場合
    * @private 
    */
   async _post(uri, data) {
