@@ -13,7 +13,7 @@ describe('サインインページについて', () => {
     handleCancel.mockClear()
     render(
       <SignInPage
-        updateText    = {handleChange}
+        handleChange  = {handleChange}
         handleOK      = {handleOK}
         handleCancel  = {handleCancel}
       />

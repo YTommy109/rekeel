@@ -15,7 +15,7 @@ const SignInPage = ({...props}) =>
   <Div {...props}>
     <CentralBox>
       <SignIn
-        handleChange  = {props.updateText}
+        handleChange  = {props.handleChange}
         handleOK      = {props.handleOK}
         handleCancel  = {props.handleCancel}
       />
@@ -23,7 +23,7 @@ const SignInPage = ({...props}) =>
   </Div>
 
 SignInPage.propTypes = {
-  updateText:   PropTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired,
   handleOK:     PropTypes.func.isRequired,
   handleCancel: PropTypes.func.isRequired
 }

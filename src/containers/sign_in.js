@@ -9,9 +9,15 @@ const Container = () => {
   const actions = signInModule.actions
   const dispatch = useDispatch()
 
+  const handleChange = e =>
+    dispatch(actions.handleChange({name: e.target.name, value: e.target.value}))
+
   return (
     <SignInPage
-      updateText  = {e => dispatch(actions.updateText({name: e.target.name, value: e.target.value}))} />
+      handleChange  = {handleChange}
+      handleOK      = {e => {alert('OK')}}
+      handleCancel  = {e => {alert('Cancel')}}
+    />
   )
 }
 

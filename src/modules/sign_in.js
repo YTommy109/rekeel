@@ -7,7 +7,7 @@ const signInModule = createSlice({
     password: ''
   },
   reducers: {
-    updateText: (state, action) => ({...state, [action.payload.name]: action.payload.value})
+    handleChange: (state, action) => ({...state, [action.payload.name]: action.payload.value})
   }
 })
 
