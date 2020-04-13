@@ -37,7 +37,7 @@ const ButtonBase = styled.input`
   }
 `
 
-const Button = ({label, handleClick, disabled, ...props}) =>
+const Button = ({label, handleClick, ...props}) =>
   <ButtonBase
     type      = "button"
     value     = {label}
