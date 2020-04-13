@@ -9,9 +9,9 @@ storiesOf('l2_molecules', module)
   .add('メッセージ', () => 
     <div>
       <MessageBar
-        message="Hello!"
-        msgStyle={select('スタイル', ['normal', 'danger'], 'normal')}
-        isShow={boolean('表示', false)}
+        message   = "Hello!"
+        isShow    = {boolean('表示', false)}
+        msgStyle  = {select('スタイル', ['normal', 'danger'], 'normal')}
       />
     </div>
   , {
