@@ -3,6 +3,23 @@
  */
 class HttpBase {
   /**
+   * fetch
+   * @param {string} uri    Request URI
+   * @param {string} option fetch option
+   * @return {object}       レスポンスデータ
+   * @throws {Error}        http status が 400 以上の場合
+   * @private 
+   */
+  async _fetch(uri, option) {
+    const response = await fetch(uri, option)
+    if (response.status >= 400) {
+      throw new Error(response.statusText)
+    }
+
+    return response.json()
+  }
+
+  /**
    * HTTP GET
    * @param {string} uri    Request URI
    * @return {object}       レスポンスデータ
@@ -14,12 +31,8 @@ class HttpBase {
       method:   'GET',
       headers:  {'Content-Type': 'application/json; charset=utf-8', 'Accept-Language': 'ja'}
     }
-    const response = await fetch(uri, option)
-    if (response.status >= 400) {
-      throw new Error(response.statusText)
-    }
 
-    return response.json()
+    return this._fetch(uri, option)
   }
 
   /**
@@ -36,12 +49,8 @@ class HttpBase {
       headers:  {'Content-Type': 'application/json; charset=utf-8', 'Accept-Language': 'ja'},
       body:     JSON.stringify(data)
     }
-    const response = await fetch(uri, option)
-    if (response.status >= 400) {
-      throw new Error(response.statusText)
-    }
 
-    return response.json()
+    return this._fetch(uri, option)
   }
 
   /**
@@ -58,12 +67,8 @@ class HttpBase {
       headers:  {'Content-Type': 'application/json; charset=utf-8', 'Accept-Language': 'ja'},
       body:     JSON.stringify(data)
     }
-    const response = await fetch(uri, option)
-    if (response.status >= 400) {
-      throw new Error(response.statusText)
-    }
 
-    return response.json()
+    return this._fetch(uri, option)
   }
 
   /**
@@ -78,12 +83,8 @@ class HttpBase {
       method:   'DELETE',
       headers:  {'Content-Type': 'application/json; charset=utf-8', 'Accept-Language': 'ja'}
     }
-    const response = await fetch(uri, option)
-    if (response.status >= 400) {
-      throw new Error(response.statusText)
-    }
 
-    return response.json()
+    return this._fetch(uri, option)
   }
 }
 
