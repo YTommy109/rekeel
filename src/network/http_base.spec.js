@@ -58,7 +58,6 @@ describe('HttpBase クラスについて', () => {
   
     /** @test {HttpBase#_post} */
     it('正常時にデータを返すこと', async () => {
-      
       fetch.mockResponseOnce(JSON.stringify(res_data), res_header)
       expect(await target._post('a', req_data)).toEqual(res_data)
     })
@@ -74,6 +73,79 @@ describe('HttpBase クラスについて', () => {
     it('異常時に例外が起こること', async () => {
       fetch.mockResponseOnce(JSON.stringify(res_data), {...res_header, status: 403})
       await expect(target._post('a', req_data)).rejects.toThrow('Forbidden')
+    })
+  })
+
+  /** @test {HttpBase#_put} */
+  describe('_put メソッドについて', () => {
+    const req_data    = {
+      name: 'hoge'
+    }
+    const req_header  = {
+      method:   'PUT',
+      headers:  {'Content-Type': 'application/json; charset=utf-8', 'Accept-Language': 'ja'},
+      body:     JSON.stringify(req_data)
+    }
+    const res_header  = {status: 200, headers: {'Content-Type': 'application/json; charset=utf-8'}}
+    const res_data    = {result: 'ok'}
+
+    beforeEach(() => {
+      fetch.resetMocks()
+    })
+  
+    /** @test {HttpBase#_put} */
+    it('正常時にデータを返すこと', async () => {
+      fetch.mockResponseOnce(JSON.stringify(res_data), res_header)
+      expect(await target._put('a', req_data)).toEqual(res_data)
+    })
+
+    /** @test {HttpBase#_put} */
+    it('fetch 呼び出しパラメータが適切であること', async () => {
+      fetch.mockResponseOnce(JSON.stringify(res_data), res_header)
+      await target._put('a', req_data)
+      expect(fetch).toBeCalledWith('a', req_header)
+    })
+
+    /** @test {HttpBase#_put} */
+    it('異常時に例外が起こること', async () => {
+      fetch.mockResponseOnce(JSON.stringify(res_data), {...res_header, status: 400})
+      await expect(target._put('a', req_data)).rejects.toThrow('Bad Request')
+    })
+  })
+
+  /** @test {HttpBase#_delete} */
+  describe('_delete メソッドについて', () => {
+    const req_data    = {
+      name: 'hoge'
+    }
+    const req_header  = {
+      method:   'DELETE',
+      headers:  {'Content-Type': 'application/json; charset=utf-8', 'Accept-Language': 'ja'}
+    }
+    const res_header  = {status: 200, headers: {'Content-Type': 'application/json; charset=utf-8'}}
+    const res_data    = {result: 'ok'}
+
+    beforeEach(() => {
+      fetch.resetMocks()
+    })
+  
+    /** @test {HttpBase#_delete} */
+    it('正常時にデータを返すこと', async () => {
+      fetch.mockResponseOnce(JSON.stringify(res_data), res_header)
+      expect(await target._delete('a', req_data)).toEqual(res_data)
+    })
+
+    /** @test {HttpBase#_delete} */
+    it('fetch 呼び出しパラメータが適切であること', async () => {
+      fetch.mockResponseOnce(JSON.stringify(res_data), res_header)
+      await target._delete('a', req_data)
+      expect(fetch).toBeCalledWith('a', req_header)
+    })
+
+    /** @test {HttpBase#_delete} */
+    it('異常時に例外が起こること', async () => {
+      fetch.mockResponseOnce(JSON.stringify(res_data), {...res_header, status: 400})
+      await expect(target._delete('a', req_data)).rejects.toThrow('Bad Request')
     })
   })
 })
