@@ -24,16 +24,15 @@ const ButtonBase = styled.input`
   background-color:   ${props => bgColor(props.btnStyle)};
   border-radius:      8px;
   transition:         all .3s ease-out;
-
+  :hover {
+    color:              ${props => bgColor(props.btnStyle)};
+    background-color:   white;
+  }
   :disabled {
     color:            #38468C;
     border:           1px solid #38468C;
     border-radius:    8px;
     background-color: #FFFFFF;
-  }
-  :hover {
-    color:              ${props => bgColor(props.btnStyle)};
-    background-color:   white;
   }
 `
 
