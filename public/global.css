@@ -1,5 +1,7 @@
+@import url(https://unpkg.com/sanitize.css);
 @import url(https://unpkg.com/leaflet@1.6.0/dist/leaflet.css);
 @import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+
 body {
     color:      dimgray;
     font-family: 'Noto Sans Japanese', serif;
