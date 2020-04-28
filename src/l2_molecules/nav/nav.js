@@ -44,13 +44,12 @@ const Nav = styled.nav`
   }
 `
 
-export const NavItem = ({href, id, isActive, children, ...props}) =>
-  <li>
-    <a id={id} href={href} className={isActive?'active':''}>{children}</a>
+export const NavItem = ({href, isActive, children, ...props}) =>
+  <li {...props}>
+    <a href={href} className={isActive?'active':''}>{children}</a>
   </li>
 
 NavItem.propTypes = {
-  id:         PropTypes.string.isRequired,
   href:       PropTypes.string,
   isActive:   PropTypes.bool,
   children:   PropTypes.node
@@ -60,7 +59,7 @@ NavItem.defaultProps = {
 }
 
 const NavBar = ({brand, children, ...props}) =>
-  <Nav>
+  <Nav {...props}>
     <h1>{brand}</h1>
     <ul>
       {children}
