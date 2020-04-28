@@ -22,6 +22,7 @@ const Nav = styled.nav`
   }
   li {
     display:                table;
+    width:                  100%;
   }
   a {
     color:                  whitesmoke;
