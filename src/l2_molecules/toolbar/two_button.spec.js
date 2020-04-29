@@ -20,7 +20,6 @@ describe('ツーボタンバーについて', () => {
     btn1.mockClear()
     btn2.mockClear()
     render(<TwoButton config={config}/>)
-
   })
   describe('ボタン1 について', () => {
     it('存在すること', () => {
