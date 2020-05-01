@@ -6,13 +6,13 @@ import CurrentMap from './current_map'
 storiesOf('l2_molecules', module)
   .add('マップ部品', () =>
     <div>
-      <CurrentMap style={{width: '800px', height: '600px'}}
-        mapClickHandle  = {action('マップをクリックしました!')}
-        center = {[35.651687, 139.789177]}
-        points = {[
-          [35.655640, 139.790989],
-          [35.652031, 139.793092],
-          [35.649076, 139.790860]
+      <CurrentMap style={{width: '100%', height: '80vh'}}
+        handleClickOnMap  = {action('マップをクリックしました!')}
+        adhoc             = {['35.684195', '139.743789']}
+        points            = {[
+          ['35.688195', '139.743789'],
+          ['35.690375', '139.753789'],
+          ['35.690375', '139.758789']
         ]}
       />
     </div>

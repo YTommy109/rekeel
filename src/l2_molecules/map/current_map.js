@@ -11,10 +11,12 @@ const icon = new L.Icon({
 })
 
 const Div = styled.div`
-  width:    100%;
-  height:   100%;
-  .leaflet-container {
-    height: 100%;
+  width:              100%;
+  height:             100%;
+  display:            grid;
+  grid-template-rows: 2.3rem auto;
+  :first-child  {
+    text-align:       right;
   }
 `
 
@@ -24,7 +26,7 @@ const getCurrentPosition = options => {
   })
 }
 
-const CurrentMap = ({points, handleClickOnMap, ...props}) => {
+const CurrentMap = ({adhoc, points, handleClickOnMap, ...props}) => {
   const [center, setCenter] = useState(['35.685375', '139.752789'])
   const handleCurrent = async () => {
     const data = await getCurrentPosition({timeout: 5000})
@@ -33,13 +35,15 @@ const CurrentMap = ({points, handleClickOnMap, ...props}) => {
 
   return (
     <Div {...props}>
-      <Button
-        id          = "current"
-        label       = "現在地"
-        size        = "sm"
-        btnStyle    = "primary"
-        handleClick = {handleCurrent}
-      />
+      <div>
+        <Button
+          id          = "current"
+          label       = "現在地"
+          size        = "sm"
+          btnStyle    = "primary"
+          handleClick = {handleCurrent}
+        />
+      </div>
       <Map
         center      = {center}
         zoom        = {15}
@@ -54,6 +58,7 @@ const CurrentMap = ({points, handleClickOnMap, ...props}) => {
           zoomOffset  = {-1}
           maxZoom     = {18}
         />
+        {adhoc && <Marker position={adhoc} data-testid="adhoc" />}
         <Polyline
           color       = "blue"
           positions   = {points}
@@ -68,6 +73,7 @@ const CurrentMap = ({points, handleClickOnMap, ...props}) => {
 
 CurrentMap.propTypes = {
   center:           PropTypes.array.isRequired,
+  adhoc:            PropTypes.array.isRequired,
   points:           PropTypes.array.isRequired,
   handleClickOnMap: PropTypes.func
 }
