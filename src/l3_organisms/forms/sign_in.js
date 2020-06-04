@@ -3,21 +3,21 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import TextWithLabel from '~/l2_molecules/forms/text_with_label'
 import PswdWithLabel from '~/l2_molecules/forms/pswd_with_label'
-import TwoButton from '~/l2_molecules/toolbar/two_button'
+import Button from '~/l1_atoms/button'
+import RightArrangeTray from '~/l4_templates/tray'
 
-const Div = styled.div`
-  fieldset {
-    border:         solid medium silver;
-    border-radius:  10px;
-    display:        grid;
-    grid-gap:       30px;
-  }
+
+const Fieldset = styled.fieldset`
+  border:         solid medium silver;
+  border-radius:  10px;
+  display:        grid;
+  grid-gap:       30px;
 `
 
 const SignIn = ({handleChange, handleOK, handleCancel, ...props}) =>
-  <Div {...props}>
+  <div>
     <form>
-      <fieldset>
+      <Fieldset>
         <legend data-testid="label">サインインしてください</legend>
         <TextWithLabel
           id            = "account"
@@ -32,23 +32,25 @@ const SignIn = ({handleChange, handleOK, handleCancel, ...props}) =>
           label         = "パスフレーズ"
           handleChange  = {handleChange}
         />
-        <TwoButton
-          data-testid   = 'buttonbar'
-          config        = {[{
-            id:           'cancel',
-            name:         'cancel',
-            label:        'キャンセル',
-            handleClick:  handleCancel
-          }, {
-            id:           'signin',
-            name:         'signin',
-            label:        'サインイン',
-            handleClick:  handleOK
-          }]}
-        />
-      </fieldset>
+        <RightArrangeTray data-testid='buttonbar'>
+          <Button
+            id          = 'cancel'
+            name        = 'cancel'
+            label       = 'キャンセル'
+            handleClick = {handleCancel}
+          />
+          <Button
+            id          = 'signin'
+            name        = 'signin'
+            label       = 'サインイン'
+            btnStyle    = 'primary'
+            handleClick = {handleOK}
+          />
+
+        </RightArrangeTray>
+      </Fieldset>
     </form>
-  </Div>
+  </div>
 
 SignIn.propTypes = {
   handleChange: PropTypes.func,
