@@ -7,12 +7,10 @@
     "parser": "babel-eslint",
     "plugins": [
       "react",
-      "react-redux",
       "testcafe"
     ],
     "extends": [
       "plugin:react/recommended",
-      "plugin:react-redux/recommended",
       "plugin:testcafe/recommended"
     ],
     "parserOptions": {
