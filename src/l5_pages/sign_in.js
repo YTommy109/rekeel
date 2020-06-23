@@ -14,11 +14,7 @@ const Div = styled.div`
 const SignInPage = ({...props}) =>
   <Div {...props}>
     <CentralBox>
-      <SignIn
-        handleChange  = {props.handleChange}
-        handleOK      = {props.handleOK}
-        handleCancel  = {props.handleCancel}
-      />
+      <SignIn {...props} />
     </CentralBox>
   </Div>
 

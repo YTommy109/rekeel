@@ -23,6 +23,7 @@ const SignIn = ({handleChange, handleOK, handleCancel, ...props}) =>
           id            = "account"
           name          = "account"
           label         = "アカウント"
+          value         = {props.account}
           handleChange  = {handleChange}
           autoComplete  = "username"
         />
@@ -31,6 +32,7 @@ const SignIn = ({handleChange, handleOK, handleCancel, ...props}) =>
           name          = "password"
           label         = "パスフレーズ"
           handleChange  = {handleChange}
+          value         = {props.password}
         />
         <RightArrangeTray data-testid='buttonbar'>
           <Button
@@ -53,9 +55,12 @@ const SignIn = ({handleChange, handleOK, handleCancel, ...props}) =>
   </div>
 
 SignIn.propTypes = {
+  account:      PropTypes.string,
+  password:     PropTypes.string,
   handleChange: PropTypes.func,
   handleOK:     PropTypes.func,
   handleCancel: PropTypes.func
 }
-  
+
+
 export default SignIn

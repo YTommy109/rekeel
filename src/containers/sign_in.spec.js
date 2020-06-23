@@ -1,24 +1,12 @@
 import React from 'react'
-import {Provider} from 'react-redux'
-import {configureStore, getDefaultMiddleware} from '@reduxjs/toolkit'
+import {RecoilRoot} from 'recoil'
 import {render, fireEvent, screen} from '@testing-library/react'
-import reducer from '~/modules'
 import SignIn from './sign_in'
 
-const initialState = {}
-const middleware = [...getDefaultMiddleware()]
-const renderWithRedux = (ui,
-  {initialState, store = configureStore({reducer, middleware})} = {}
-) => {
-  return {
-    ...render(<Provider store={store}>{ui}</Provider>),
-    store
-  }
-}
 
 describe('サインインコンテナについて', () => {
   beforeEach(() => {
-    renderWithRedux(<SignIn />)
+    render(<RecoilRoot><SignIn /></RecoilRoot>)
   })
 
   it('アカウントが入力されること', () => {

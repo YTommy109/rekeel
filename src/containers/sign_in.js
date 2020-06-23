@@ -1,21 +1,16 @@
 import React from 'react'
-import {useDispatch} from 'react-redux'
+import {useRecoilState} from 'recoil'
+import atoms from './atoms'
 import SignInPage from '~/l5_pages/sign_in'
-import signInModule from '~/modules/sign_in'
-
 
 const Container = () => {
-
-  const actions = signInModule.actions
-  const dispatch = useDispatch()
-
-  const handleChange = e =>
-    dispatch(actions.handleChange({name: e.target.name, value: e.target.value}))
+  const [auth, setAuth] = useRecoilState(atoms.authentication)
+  const handleEntry = e => setAuth(org => ({...org, [e.target.name]: e.target.value}))
 
   return (
-    <SignInPage
-      handleChange  = {handleChange}
-      handleOK      = {e => {alert('OK')}}
+    <SignInPage       {...auth}
+      handleChange  = {handleEntry}
+      handleOK      = {e => {alert(JSON.stringify(auth))}}
       handleCancel  = {e => {alert('Cancel')}}
     />
   )

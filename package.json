@@ -21,6 +21,7 @@
     "react-scripts": "^3.4.0",
     "react-transition-group": "^4.3.0",
     "recharts": "^1.8.5",
+    "recoil": "^0.0.10",
     "redux": "^4.0.5",
     "redux-logger": "^3.0.6",
     "styled-components": "^5.0.0"
