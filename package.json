@@ -83,6 +83,7 @@
     "json-server": "^0.16.1",
     "plato": "^1.7.0",
     "react-app-rewired": "^2.1.5",
+    "recoil-logger": "^1.0.1",
     "serve": "^11.3.0",
     "testcafe": "^1.8.2",
     "testcafe-react-selectors": "^4.0.0"

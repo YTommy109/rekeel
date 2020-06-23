@@ -5,6 +5,9 @@ const authentication = atom({
   default:  {
     account:  '',
     password: ''
+  },
+  persistence_UNSTABLE: {
+    type: 'log'
   }
 })
 
