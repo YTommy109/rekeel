@@ -1,10 +1,11 @@
 import React from 'react'
 import {storiesOf} from '@storybook/react'
-import {withKnobs, boolean} from '@storybook/addon-knobs'
+import {withKnobs, boolean, select} from '@storybook/addon-knobs'
 import {action} from '@storybook/addon-actions'
 import Button from './button'
 import Frame from './frame'
 import EmptyBox from './empty_box'
+import Switch from './switch'
 
 storiesOf('l1_atoms', module)
   .addDecorator(withKnobs)
@@ -31,6 +32,24 @@ storiesOf('l1_atoms', module)
         <Button id="b03" size="lg" btnStyle="danger" label="注意ボタン" handleClick={action('danger clicked')} disabled={boolean('無効化', false)} />
       </Frame>
     </React.Fragment>
+  , {
+    info: {
+      inline: true,
+      header: false
+    }
+  })
+  .add('スイッチ', () => 
+    <Frame>
+      <Switch
+        value         = {select('スイッチ', ['0', '1', '2'], '0')}
+        items         = {[
+          {label: 'ON',     value: '1'},
+          {label: 'Midle',  value: '2'},
+          {label: 'OFF',    value: '0'},
+        ]}
+        handleChange  = {action('スイッチ変更アクションが呼ばれた')}
+      />
+    </Frame>
   , {
     info: {
       inline: true,

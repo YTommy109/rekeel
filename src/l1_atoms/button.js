@@ -52,6 +52,7 @@ Button.propTypes = {
   handleClick:  PropTypes.func,
   disabled:     PropTypes.bool
 }
+
 Button.defaultProps = {
   disabled: false
 }
