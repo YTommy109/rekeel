@@ -6,6 +6,7 @@ import Button from './button'
 import Frame from './frame'
 import EmptyBox from './empty_box'
 import Switch from './switch'
+import RemovableItem from './removable_item'
 
 storiesOf('l1_atoms', module)
   .addDecorator(withKnobs)
@@ -56,10 +57,23 @@ storiesOf('l1_atoms', module)
       header: false
     }
   })
-  .add('空のときのメッセージ', () => 
-    <Frame>
-      <EmptyBox />
-    </Frame>
+  .add('その他', () => 
+    <React.Fragment>
+      <Frame>
+        <h2>空のときのメッセージ</h2>
+        <EmptyBox />
+      </Frame>
+      <Frame>
+        <h2>削除可能リストアイテム</h2>
+        <ol>
+          <RemovableItem
+            label         = 'アイテム1'
+            value         = 'item1'
+            handleClick   = {action('削除!')}
+          />
+        </ol>
+      </Frame>
+    </React.Fragment>
   , {
     info: {
       inline: true,
