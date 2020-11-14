@@ -7,6 +7,7 @@ import Frame from './frame'
 import EmptyBox from './empty_box'
 import Switch from './switch'
 import RemovableItem from './removable_item'
+import PullDown from './pulldown'
 
 storiesOf('l1_atoms', module)
   .addDecorator(withKnobs)
@@ -72,6 +73,17 @@ storiesOf('l1_atoms', module)
             handleClick   = {action('削除!')}
           />
         </ol>
+      </Frame>
+      <Frame>
+        <h2>プルダウン</h2>
+        <PullDown
+          placeholder = 'アイテム選択'
+          items = {[
+            {label: 'ITEM 1', value: '1'},
+            {label: 'ITEM 2', value: '2'},
+            {label: 'ITEM 3', value: '3'},
+          ]}        
+        />
       </Frame>
     </React.Fragment>
   , {
