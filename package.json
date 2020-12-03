@@ -88,7 +88,7 @@
     "serve": "^11.3.0",
     "testcafe": "^1.8.2",
     "testcafe-react-selectors": "^4.0.0",
-    "yarnhook": "^0.4.5"
+    "yarnhook": "^0.5.1"
   },
   "jest": {
     "verbose": true,
