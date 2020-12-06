@@ -70,7 +70,6 @@
     "babel-plugin-react-remove-properties": "^0.3.0",
     "babel-plugin-root-import": "^6.4.1",
     "babel-plugin-styled-components": "^1.10.7",
-    "customize-cra": "^1.0.0",
     "esdoc": "^1.1.0",
     "esdoc-ecmascript-proposal-plugin": "^1.0.0",
     "esdoc-jsx-plugin": "^1.0.0",
