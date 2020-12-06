@@ -36,7 +36,7 @@
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
     "coverage": "yarn test --coverage --watchAll=false",
-    "plato": "npx jsplato -r -n -e .eslintrc -t 'Static Analysis Report' -x '\\.(test|spec)\\.' -d report/plato src",
+    "plato": "npx jsplato -r -n -e .eslintrc -t 'Static Analysis Report' -x '\\.(test|spec)\\.' -d report/plato src/**/**.js",
     "doc": "esdoc",
     "license": "license-checker --production --excludePrivatePackages --csv --out report/license.csv"
   },
