@@ -1,5 +1,6 @@
 import '@testing-library/jest-dom/extend-expect'
-import 'jest-localstorage-mock'
+import {LocalStorage} from "node-localstorage"
 import {enableFetchMocks} from 'jest-fetch-mock'
-
+ 
+global.localStorage = new LocalStorage('./mock/localstorage')
 enableFetchMocks()
