@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
 const FrameBase = styled.div`
-  width:          ${props => props.width || '640px'};
+  width:          ${props => props.width ?? '640px'};
   border:         solid thin gainsboro;
   border-radius:  10px;
   padding:        8px;
