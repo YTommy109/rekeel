@@ -2,9 +2,9 @@ import React from 'react'
 import {RecoilRoot} from 'recoil'
 import RecoilLogger from 'recoil-logger'
 import './App.css'
-import SignIn from '~/containers/sign_in'
+import SignIn from 'containers/sign_in'
 
-const App = () =>
+const App = () => (
   <React.StrictMode>
     <RecoilRoot>
       <RecoilLogger />
@@ -13,6 +13,6 @@ const App = () =>
       </div>
     </RecoilRoot>
   </React.StrictMode>
-
+)
 
 export default App
