@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import L from 'leaflet'
-import {Map, Marker, TileLayer, Polyline} from 'react-leaflet'
+import {MapContainer, Marker, TileLayer, Polyline} from 'react-leaflet'
 import Button from '~/l1_atoms/button'
 
 const icon = new L.Icon({
@@ -44,7 +44,7 @@ const CurrentMap = ({adhoc, points, handleClickOnMap, ...props}) => {
           handleClick = {handleCurrent}
         />
       </div>
-      <Map
+      <MapContainer
         center      = {center}
         zoom        = {15}
         onClick     = {handleClickOnMap}
@@ -66,7 +66,7 @@ const CurrentMap = ({adhoc, points, handleClickOnMap, ...props}) => {
         {points.map((it, idx) =>
           <Marker key={idx} position={it} icon={icon} data-testid="point" />
         )}
-      </Map>
+      </MapContainer>
     </Div>
   )
 }
