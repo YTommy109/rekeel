@@ -39,4 +39,3 @@ describe('', () => {
     expect(target).toHaveProperty('href', 'http://localhost/#3')
   })
 })
-
